@@ -1,11 +1,11 @@
 {
-  "name": "interuifontspacing",
+  "name": "interuicharacterspacing",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
   },
   "skpm": {
-    "name": "InterUIFontSpacing",
+    "name": "InterUICharacterSpacing",
     "manifest": "src/manifest.json",
     "main": "plugin.sketchplugin",
     "assets": [
