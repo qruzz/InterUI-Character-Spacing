@@ -21,5 +21,9 @@
   "devDependencies": {
     "@skpm/builder": "^0.5.2"
   },
-  "author": "Michael Nissen <m9ssen@gmail.com>"
+  "author": "Michael Nissen <m9ssen@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ORG/NAME.git"
+	}
 }
