@@ -29,4 +29,4 @@ before_install:
   - npm set progress=false
 
 after_install:
-  - yes
+  - "yes"
