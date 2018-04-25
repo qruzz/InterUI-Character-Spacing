@@ -1,5 +1,7 @@
 # InterUICharacterSpacing
 
+[![Build Status](https://travis-ci.org/qruzz/InterUI-Character-Spacing.svg?branch=master)](https://travis-ci.org/qruzz/InterUI-Character-Spacing)
+
 A Sketch plugin that adjusts the character spacing on text layers using the beautiful InterUI fonts (https://rsms.me/inter/) to what it would be when used in the app.
 
 E.g. If you use SF UI Text at 16pt the script will set this layer's character spacing to -0.32.
