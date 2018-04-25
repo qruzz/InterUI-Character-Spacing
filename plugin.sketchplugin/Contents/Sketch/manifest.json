@@ -1,7 +1,7 @@
 {
   "author": "Michael Nissen",
   "authorEmail": "m9ssen@gmail.com",
-  "name": "InterUI Character Spacing",
+  "name": "InterUI-Character-Spacing",
   "version": "1.0.0",
   "compatibleVersion": 3,
   "bundleVersion": 1,
@@ -20,6 +20,7 @@
       "my-command-identifier"
     ]
   },
+  "description": "Package to correct the character spacing for the InterUI font in Sketch",
   "disableCocoaScriptPreprocessor": true,
-  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml"
+  "appcast": "https://raw.githubusercontent.com/qruzz/InterUI-Character-Spacing/master/.appcast.xml"
 }

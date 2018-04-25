@@ -1,6 +1,8 @@
 {
   "name": "interuicharacterspacing",
   "version": "0.1.0",
+  "description": "Package to correct the character spacing for the InterUI font in Sketch",
+  "license": "MIT",
   "engines": {
     "sketch": ">=3.0"
   },
@@ -22,8 +24,11 @@
     "@skpm/builder": "^0.5.2"
   },
   "author": "Michael Nissen <m9ssen@gmail.com>",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ORG/NAME.git"
-	}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qruzz/InterUI-Character-Spacing.git"
+  },
+  "dependencies": {
+    "npm": "^6.0.0"
+  }
 }
