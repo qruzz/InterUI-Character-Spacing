@@ -2,7 +2,8 @@
   "author": "Michael Nissen",
   "authorEmail": "m9ssen@gmail.com",
   "name": "InterUI Character Spacing",
-  "version": "1.0.0",
+  "description": "Adjust the character spacing and line height on text layers using InterUI fonts to match the recommended dynamic metrics",
+  "version": "1.1.1",
   "compatibleVersion": 3,
   "bundleVersion": 1,
   "icon": "icon.png",
@@ -16,8 +17,6 @@
   ],
   "menu": {
     "title": "📏 InterUI Character Spacing",
-    "items": [
-      "my-command-identifier"
-    ]
+    "items": ["my-command-identifier"]
   }
 }
