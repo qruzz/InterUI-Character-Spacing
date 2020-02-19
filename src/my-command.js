@@ -1,49 +1,57 @@
-function adjustFontForLayer(layer) {
-  let fontSize = layer.fontSize();
+var sketch = require('sketch');
 
-  let characterSpacings = {
-    6: 0.33,
-    7: 0.264,
-    8: 0.204,
-    9: 0.144,
-    10: 0.108,
-    11: 0.072,
-    12: 0.042,
-    13: 0.018,
-    14: 0.006,
-    15: -0.012,
-    16: -0.024,
-    17: -0.036,
-    18: -0.048,
-    20: -0.05,
-    24: -0.078,
-    30: -0.09,
-    40: -0.096
-  };
+const IDEAL_VALUES = {
+  6: { characterSpacing: 0.043, lineHeight: 8 },
+  7: { characterSpacing: 0.032, lineHeight: 10 },
+  8: { characterSpacing: 0.024, lineHeight: 11 },
+  9: { characterSpacing: 0.016, lineHeight: 13 },
+  10: { characterSpacing: 0.01, lineHeight: 14 },
+  11: { characterSpacing: 0.005, lineHeight: 15 },
+  12: { characterSpacing: 0, lineHeight: 17 },
+  13: { characterSpacing: -0.0025, lineHeight: 18 },
+  14: { characterSpacing: -0.006, lineHeight: 20 },
+  15: { characterSpacing: -0.009, lineHeight: 21 },
+  16: { characterSpacing: -0.011, lineHeight: 22 },
+  17: { characterSpacing: -0.013, lineHeight: 24 },
+  18: { characterSpacing: -0.014, lineHeight: 25 },
+  20: { characterSpacing: -0.017, lineHeight: 28 },
+  24: { characterSpacing: -0.019, lineHeight: 34 },
+  30: { characterSpacing: -0.021, lineHeight: 42 },
+  40: { characterSpacing: -0.022, lineHeight: 56 },
+  80: { characterSpacing: -0.022, lineHeight: 112 }
+};
 
-  if (characterSpacings[fontSize] != nil) {
-    return layer.setCharacterSpacing(characterSpacings[fontSize]);
-  }
-}
+(function() {
+  const document = sketch.getSelectedDocument();
 
-export default function(context) {
-  const selectedLayers = context.selection;
+  const selectedLayers = document.selectedLayers;
   const selectedCount = selectedLayers.length;
 
-  selectedLayers.forEach((layer) => {
-    if (layer.isKindOfClass(MSTextLayer)) {
-      const fontName = layer.fontPostscriptName();
-
-      if (fontName.hasPrefix("InterUI") || fontName.hasPrefix("Inter UI")) {
+  if (selectedCount !== 0) {
+    console.log('Selected layers:');
+    selectedLayers.forEach(function(layer) {
+      if (layer.type === 'Text') {
         adjustFontForLayer(layer);
-        if (selectedCount === 1) {
-          context.document.showMessage(`🙌 ${selectedCount} layer was corrected`);
-        } else {
-          context.document.showMessage(`🙌 ${selectedCount} layers were corrected`);
-        }
+        sketch.UI.message(
+          `🙌 ${selectedCount} layer${
+            selectedCount === 1 ? '' : 's'
+          } was corrected`
+        );
+      } else {
+        sketch.UI.message('😁 This plugin only works on text layers.');
       }
-    } else {
-      context.document.showMessage(`Plugin only works on text layers 😁`);
-    }
-  });
+    });
+  } else {
+    sketch.UI.message(
+      '😊 Please select the text layer that you want to adjust.'
+    );
+  }
+})();
+
+function adjustFontForLayer(layer) {
+  const idealValues = IDEAL_VALUES[layer.style.fontSize];
+  if (idealValues) {
+    layer.style.lineHeight = idealValues.lineHeight;
+    layer.style.kerning = idealValues.characterSpacing;
+  }
 }
