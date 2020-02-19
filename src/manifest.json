@@ -3,7 +3,7 @@
   "authorEmail": "m9ssen@gmail.com",
   "name": "InterUI Character Spacing",
   "description": "Adjust the character spacing and line height on text layers using InterUI fonts to match the recommended dynamic metrics",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "compatibleVersion": 3,
   "bundleVersion": 1,
   "icon": "icon.png",
